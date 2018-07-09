@@ -1,14 +1,390 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title style="background-color: rosybrown">
+      Quiz App
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="main">
+ 
+  <div *ngIf = "question == 0">
+ <img src="../../assets/imgs/Sports_Logo.jpg" height="100px" width="100%"><br><br>
+  <p style="text-align: center">Welcome to our Quiz App, Press PLAY to begin</p><br><br>
+  <button ion-button block (click) = "onClick('q1')">PLAY</button>
+ </div>
+
+  <div *ngIf = "question == 1" id = "img">
+      <img src="../../assets/imgs/soccer.jpg" height="100px"><br><br>
+      <ion-list radio-group [(ngModel)]="value">
+          <ion-list-header>
+            Question 1
+          </ion-list-header>
+
+          <p>The first official international match took place in 1872 in Glasgow, between Scotland and England</p>
+        
+          <ion-item>
+              <ion-label>True</ion-label>
+              <ion-radio checked="false" value="true" >True</ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>False</ion-label>
+              <ion-radio checked="false" value="false">True</ion-radio>
+            </ion-item>
+    </ion-list>    
+  
+    <button ion-button block (click) = "onClick('q2')">Next</button><br>
+    <p style="text-align: center">Points: {{points}} of 15 </p>
+  </div>
+
+  <div *ngIf = "question == 2" id = "img">
+      <img src="../../assets/imgs/soccer.jpg" height="100px"><br><br>
+      <ion-list radio-group [(ngModel)]="value2">
+          <ion-list-header>
+            Question 2
+          </ion-list-header>
+          <p>Cristiano has participated in 13 finals the club level. In those matches he scored 18 goals?</p>
+        
+          <ion-item>
+              <ion-label>True</ion-label>
+              <ion-radio checked="false" value="true">True</ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>False</ion-label>
+              <ion-radio checked="false" value="false">True</ion-radio>
+            </ion-item>
+    </ion-list>    
+  
+    <button ion-button block (click) = "onClick('q3')">Next</button><br>
+    <p style="text-align: center">Points: {{points}} of 15 </p>
+  </div>
+
+  <div *ngIf = "question == 3" id = "img">
+    <img src="../../assets/imgs/soccer.jpg" height="100px"><br><br>
+      <ion-list radio-group [(ngModel)]="value3">
+          <ion-list-header>
+            Question 3
+          </ion-list-header>
+
+          <p>Lionel Messi won an Olympic gold medal, along with the Argentinian football team, at the 2008 Olympic games in Beijing.</p>
+        
+          <ion-item>
+              <ion-label>True</ion-label>
+              <ion-radio checked="false" value="true">True</ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>False</ion-label>
+              <ion-radio checked="false" value="false">True</ion-radio>
+            </ion-item>
+    </ion-list>    
+  
+    <button ion-button block (click) = "onClick('q4')">Next</button><br>
+    <p style="text-align: center">Points: {{points}} of 15 </p>
+  </div>
+
+  <div *ngIf = "question == 4" id = "img">
+      <img src="../../assets/imgs/soccer.jpg" height="100px"><br><br>
+      <ion-list radio-group [(ngModel)]="value4">
+          <ion-list-header>
+            Question 4
+          </ion-list-header>
+          <p>Neymar Jr was the top scorer at the 2010 Copa do Brasil tournament?</p>
+        
+          <ion-item>
+              <ion-label>True</ion-label>
+              <ion-radio checked="false" value="true">True</ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>False</ion-label>
+              <ion-radio checked="false" value="false">True</ion-radio>
+            </ion-item>
+    </ion-list>    
+  
+    <button ion-button block (click) = "onClick('q5')">Next</button>
+    <p style="text-align: center">Points: {{points}} of 15 </p><br>
+  </div>
+  <div *ngIf = "question == 5" id = "img">
+    <img src="../../assets/imgs/soccer.jpg" height="100px" width="90%"><br><br>
+      <ion-list radio-group [(ngModel)]="value5">
+          <ion-list-header>
+            Question 5
+          </ion-list-header>
+          <p>Bale was out of competitive football for two months, due to knee operation in June 2009?</p>
+        
+          <ion-item>
+              <ion-label>True</ion-label>
+              <ion-radio checked="false" value="true">True</ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>False</ion-label>
+              <ion-radio checked="false" value="false">True</ion-radio>
+            </ion-item>
+    </ion-list>    
+  
+    <button ion-button block (click) = "onClick('q6')">Next</button>
+    <p style="text-align: center">Points: {{points}} of 15 </p><br>
+  </div>
+
+  <div *ngIf = "question == 6" id = "img">
+      <img src="../../assets/imgs/cricket.jpg" height="100px"><br><br>
+        <ion-list radio-group [(ngModel)]="value6">
+            <ion-list-header>
+              Question 1
+            </ion-list-header>
+            <p> Shahid Afridi used Sachin Tendulkar's bat to hit the fastest ever ODI century</p>
+          
+            <ion-item>
+                <ion-label>True</ion-label>
+                <ion-radio checked="false" value="true">True</ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-label>False</ion-label>
+                <ion-radio checked="false" value="false">True</ion-radio>
+              </ion-item>
+      </ion-list>    
+    
+      <button ion-button block (click) = "onClick('q7')">Next</button><br>
+      <p style="text-align: center">Points: {{points}} of 15 </p>
+    </div>
+
+    <div *ngIf = "question == 7" id = "img">
+        <img src="../../assets/imgs/cricket.jpg" height="100px"><br><br>
+          <ion-list radio-group [(ngModel)]="value7">
+              <ion-list-header>
+                Question 2
+              </ion-list-header>
+              <p> Chris Gayle is the only batsman to hit a six off the first ball of a Test match</p>
+            
+              <ion-item>
+                  <ion-label>True</ion-label>
+                  <ion-radio checked="false" value="true">True</ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label>False</ion-label>
+                  <ion-radio checked="false" value="false">True</ion-radio>
+                </ion-item>
+        </ion-list>    
+      
+        <button ion-button block (click) = "onClick('q8')">Next</button><br>
+        <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+
+      <div *ngIf = "question == 8" id = "img">
+          <img src="../../assets/imgs/cricket.jpg" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value8">
+                <ion-list-header>
+                  Question 3
+                </ion-list-header>
+                <p> On the morning of 11/11/11 South Africa needed 111 runs to win at 11:11</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q9')">Next</button>
+          <p style="text-align: center">Points: {{points}} of 15 </p><br>
+      </div>
+
+      <div *ngIf = "question == 9" id = "img">
+          <img src="../../assets/imgs/cricket.jpg" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value9">
+                <ion-list-header>
+                  Question 4
+                </ion-list-header>
+                <p> Allan Border played 153 consecutive Test matches</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q10')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+
+      
+      <div *ngIf = "question == 10" id = "img">
+          <img src="../../assets/imgs/cricket.jpg" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value10">
+                <ion-list-header>
+                  Question 5
+                </ion-list-header>
+                <p> Wilfred Rhodes of England played Test cricket till he was 52</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q11')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+
+      <div *ngIf = "question == 11" id = "img">
+          <img src="../../assets/imgs/rugby.JPG" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value11">
+                <ion-list-header>
+                  Question 1
+                </ion-list-header>
+                <p> The Rugby Union World Cup, held every four years, awards the Webb Ellis Cup to the winning team.</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q12')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+      <div *ngIf = "question == 12" id = "img">
+          <img src="../../assets/imgs/rugby.JPG" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value12">
+                <ion-list-header>
+                  Question 2
+                </ion-list-header>
+                <p> Italy joined Rugby Union's Five Nations in 2000, changing it to Six Nations</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q13')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      
+      </div>
+      <div *ngIf = "question == 13" id = "img">
+          <img src="../../assets/imgs/rugby.JPG" height="100px" ><br><br>
+            <ion-list radio-group [(ngModel)]="value13">
+                <ion-list-header>
+                  Question 3
+                </ion-list-header>
+                <p> Rugby Union was declared an open professional game and all restrictions regarding pay are lifted.</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q14')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+
+      <div *ngIf = "question == 14" id = "img">
+          <img src="../../assets/imgs/rugby.JPG" height="100px" ><br><br>
+            <ion-list radio-group [(ngModel)]="value14">
+                <ion-list-header>
+                  Question 4
+                </ion-list-header>
+                <p> The highest number of points scored during the Rugby World Cup was 162 in 1995. Japan lost to New Zealand, 145 to 17.</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q15')">Next</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+      </div>
+
+      <div *ngIf = "question == 15" id = "img">
+          <img src="../../assets/imgs/rugby.JPG" height="100px"><br><br>
+            <ion-list radio-group [(ngModel)]="value15">
+                <ion-list-header>
+                  Question 5
+                </ion-list-header>
+                <p> Rugby has only been played as an Olympic sport four times. The first time was in 1900 and the last time was in 1924</p>
+              
+                <ion-item>
+                    <ion-label>True</ion-label>
+                    <ion-radio checked="false" value="true">True</ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>False</ion-label>
+                    <ion-radio checked="false" value="false">True</ion-radio>
+                  </ion-item>
+          </ion-list>    
+        
+          <button ion-button block (click) = "onClick('q16')">SUBMIT</button><br>
+          <p style="text-align: center">Points: {{points}} of 15 </p>
+          
+      </div>
+
+    <div *ngIf = "question === 16">
+
+      <p style="text-align: center">Points: {{points}} of 15 </p>
+
+      <strong>Correct Answers</strong><br><br>
+      Soccer Category
+      <ol>
+          <li>True</li>
+          <li>False</li>
+          <li>True</li>
+          <li>True</li>
+          <li>False</li>
+      </ol><br><br>
+      Cricket Category
+      <ol>
+        <li>True</li>
+        <li>True</li>
+        <li>True</li>
+        <li>True</li>
+        <li>True</li>
+    </ol><br><br>
+    Rugby Category
+    <ol>
+        <li>False</li>
+        <li>True</li>
+        <li>False</li>
+        <li>False</li>
+        <li>False</li>
+    </ol>
+
+
+
+
+
+
+      
+
+      
+    </div>
+
+ 
 </ion-content>
